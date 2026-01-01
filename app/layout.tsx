@@ -3,13 +3,13 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-    title: "BulkBuddy — Built for Training",
+    title: "BulkBuddy – Simple Workout Tracker for Real Training",
     description:
-        "A fast, no-bloat workout tracker for people who actually train. Log sets in seconds with freestyle or templates.",
+        "BulkBuddy is a fast, no-bloat workout tracker for iOS and Android. Log sets in seconds using freestyle or templates. Built for serious training.",
     openGraph: {
-        title: "BulkBuddy — Built for Training",
+        title: "BulkBuddy – Simple Workout Tracker for Real Training",
         description:
-            "Fast, simple workout logging. No bloat. No distractions. Just training.",
+            "BulkBuddy is a fast, no-bloat workout tracker for iOS and Android. Log sets in seconds using freestyle or templates. Built for serious training.",
         type: "website",
     },
     robots: {

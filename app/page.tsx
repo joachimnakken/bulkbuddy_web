@@ -114,8 +114,8 @@ export default function LandingPage() {
 
             <h2>Simple workout tracker for real training</h2>
             <p>
-                BulkBuddy is a simple workout tracker built for lifters who want speed and clarity.
-                Log sets, track progress, and train without subscriptions or unnecessary features.
+                BulkBuddy is a simple workout tracker designed for lifters who want speed and clarity.
+                Log sets, track progress, and train without subscriptions, ads, or unnecessary features.
             </p>
             </section>
 
