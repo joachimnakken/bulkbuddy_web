@@ -1,5 +1,6 @@
 // app/page.tsx
 import Link from "next/link";
+import Image from "next/image";
 import AppStoreScreenshots from "@/components/AppStoreScreenshots";
 
 const APP_STORE_URL = "https://apps.apple.com/app/id6450987816";
@@ -10,9 +11,13 @@ export default function LandingPage() {
         <main className="mx-auto max-w-6xl px-6 py-12">
             {/* Header */}
             <header className="flex items-center justify-between">
-        <span className="text-lg font-semibold tracking-tight">
-          BulkBuddy
-        </span>
+                <Image
+                    src="/main_white/Color_VariantsArtboard 32.svg"
+                    alt="BulkBuddy"
+                    width={160}
+                    height={70}
+                    priority
+                />
                 <nav className="hidden gap-6 text-sm text-neutral-400 md:flex">
                     <Link href="#features" className="hover:text-white">
                         Features
@@ -61,7 +66,7 @@ export default function LandingPage() {
                     </p>
                 </div>
                 <div className="mt-16 min-w-0">
-                    <AppStoreScreenshots />
+                    <AppStoreScreenshots/>
                 </div>
             </section>
 
