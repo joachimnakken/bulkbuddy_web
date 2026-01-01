@@ -25,6 +25,31 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
+        <head>
+            <title>BulkBuddy — Built for Training</title>
+            <meta
+                name="description"
+                content="A fast, no-bloat workout tracker for people who actually train. Log sets in seconds with freestyle or templates."
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "SoftwareApplication",
+                        name: "BulkBuddy",
+                        applicationCategory: "HealthApplication",
+                        operatingSystem: "iOS, Android",
+                        description: "A fast, no-bloat workout tracker for people who actually train. Log sets in seconds with freestyle or templates.",
+                        url: "https://bulkbuddytrainer.com",
+                        offers: {
+                            "@type": "Offer",
+                            price: "0",
+                        },
+                    }),
+                }}
+            />
+        </head>
         <body className="bg-neutral-950 text-neutral-100 antialiased">
         {children}
         </body>

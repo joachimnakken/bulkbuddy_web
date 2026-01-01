@@ -107,6 +107,17 @@ export default function LandingPage() {
                     you need — and nothing you don’t.
                 </p>
             </section>
+            <section
+                className="mt-28 max-w-3xl"
+
+            >
+
+            <h2>Simple workout tracker for real training</h2>
+            <p>
+                BulkBuddy is a simple workout tracker built for lifters who want speed and clarity.
+                Log sets, track progress, and train without subscriptions or unnecessary features.
+            </p>
+            </section>
 
             {/* Footer */}
             <footer className="mt-28 border-t border-neutral-900 pt-8 text-sm text-neutral-500">
