@@ -119,6 +119,31 @@ export default function LandingPage() {
             </p>
             </section>
 
+            {/* FAQ */}
+            <section className="mt-28 max-w-3xl">
+                <h2 className="text-2xl font-semibold">
+                    Frequently asked questions
+                </h2>
+                <div className="mt-8 space-y-6">
+                    <FAQ
+                        question="Is BulkBuddy available on Android?"
+                        answer="Not yet, but it's coming first week of 2026"
+                    />
+                    <FAQ
+                        question="Is BulkBuddy free?"
+                        answer="Yes. BulkBuddy has no subscriptions, ads, or hidden upsells."
+                    />
+                    <FAQ
+                        question="Does BulkBuddy work offline?"
+                        answer="Yes. You can log workouts without an internet connection."
+                    />
+                    <FAQ
+                        question="Is this app for beginners?"
+                        answer="BulkBuddy is built for anyone who trains regularly and values speed and simplicity."
+                    />
+                </div>
+            </section>
+
             {/* Footer */}
             <footer className="mt-28 border-t border-neutral-900 pt-8 text-sm text-neutral-500">
                 <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
@@ -145,6 +170,21 @@ function Feature({
         <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
             <h3 className="text-lg font-semibold">{title}</h3>
             <p className="mt-2 text-neutral-400">{description}</p>
+        </div>
+    );
+}
+
+function FAQ({
+                 question,
+                 answer,
+             }: {
+    question: string;
+    answer: string;
+}) {
+    return (
+        <div>
+            <h3 className="text-lg font-semibold">{question}</h3>
+            <p className="mt-2 text-neutral-400">{answer}</p>
         </div>
     );
 }
