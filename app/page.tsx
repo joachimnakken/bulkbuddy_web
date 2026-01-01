@@ -1,65 +1,140 @@
-import Image from "next/image";
+// app/page.tsx
+import Link from "next/link";
+import AppStoreScreenshots from "@/components/AppStoreScreenshots";
 
-export default function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+const APP_STORE_URL = "https://apps.apple.com/"; // TODO
+const PLAY_STORE_URL = "https://play.google.com/store"; // TODO
+
+export default function LandingPage() {
+    return (
+        <main className="mx-auto max-w-6xl px-6 py-12">
+            {/* Header */}
+            <header className="flex items-center justify-between">
+        <span className="text-lg font-semibold tracking-tight">
+          BulkBuddy
+        </span>
+                <nav className="hidden gap-6 text-sm text-neutral-400 md:flex">
+                    <Link href="#features" className="hover:text-white">
+                        Features
+                    </Link>
+                    <Link href="#philosophy" className="hover:text-white">
+                        Philosophy
+                    </Link>
+                    <Link href="#download" className="hover:text-white">
+                        Download
+                    </Link>
+                </nav>
+            </header>
+
+            {/* Hero */}
+            <section className="mt-20 grid gap-12 md:grid-cols-2">
+                <div>
+                    <h1 className="text-4xl font-bold leading-tight md:text-5xl">
+                        Built for training.
+                        <br/>
+                        Not for distractions.
+                    </h1>
+
+                    <p className="mt-6 max-w-xl text-lg text-neutral-400">
+                        BulkBuddy is a fast, no-bloat workout tracker designed for people who
+                        actually train. Log sets in seconds, switch freely between exercises,
+                        and keep your focus where it belongs — on lifting.
+                    </p>
+
+                    <div className="mt-8 flex flex-wrap gap-4" id="download">
+                        <a
+                            href={APP_STORE_URL}
+                            className="rounded-xl bg-white px-6 py-3 font-semibold text-black hover:bg-neutral-200"
+                        >
+                            Download for iOS
+                        </a>
+                        <a
+                            href={PLAY_STORE_URL}
+                            className="rounded-xl border border-neutral-800 px-6 py-3 font-semibold text-white hover:border-neutral-600"
+                        >
+                            Get it on Android
+                        </a>
+                    </div>
+
+                    <p className="mt-4 text-sm text-neutral-500">
+                        No subscriptions. No ads. No AI fluff.
+                    </p>
+                </div>
+                <div className="mt-16 min-w-0">
+                    <AppStoreScreenshots />
+                </div>
+            </section>
+
+            {/* Features */}
+            <section
+                id="features"
+                className="mt-28 grid gap-8 md:grid-cols-3"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+                <Feature
+                    title="Freestyle Training"
+                    description="Pick exercises as you go. Log weight, bodyweight, reps, or time without friction."
+                />
+                <Feature
+                    title="Routines"
+                    description="Train from saved routines and jump between exercises when equipment is busy."
+                />
+                <Feature
+                    title="Clear History"
+                    description="Sessions, routines, and progress — organized so you can train smarter."
+                />
+            </section>
+
+            {/* Philosophy */}
+            <section
+                id="philosophy"
+                className="mt-28 max-w-3xl"
             >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+                <h2 className="text-2xl font-semibold">
+                    A simple philosophy
+                </h2>
+                <p className="mt-4 text-neutral-400">
+                    Most workout apps try to do everything. BulkBuddy focuses on doing
+                    one thing exceptionally well: making workout logging fast,
+                    predictable, and satisfying.
+                </p>
+                <p className="mt-4 text-neutral-400">
+                    No feeds. No social pressure. No unnecessary features. Just the tools
+                    you need — and nothing you don’t.
+                </p>
+            </section>
+
+            {/* Footer */}
+            <footer className="mt-28 border-t border-neutral-900 pt-8 text-sm text-neutral-500">
+                <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                    <span>© {new Date().getFullYear()} BulkBuddy</span>
+                    <div className="flex gap-6">
+                        <Link href="/privacy" className="hover:text-white">
+                            Privacy
+                        </Link>
+                        <Link href="/terms" className="hover:text-white">
+                            Terms
+                        </Link>
+                        <Link href="/contact" className="hover:text-white">
+                            Contactt
+                        </Link>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    );
+}
+
+function Feature({
+                     title,
+                     description,
+                 }: {
+    title: string;
+    description: string;
+}) {
+    return (
+        <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
+            <h3 className="text-lg font-semibold">{title}</h3>
+            <p className="mt-2 text-neutral-400">{description}</p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+    );
 }
