@@ -2,8 +2,8 @@
 import Link from "next/link";
 import AppStoreScreenshots from "@/components/AppStoreScreenshots";
 
-const APP_STORE_URL = "https://apps.apple.com/"; // TODO
-const PLAY_STORE_URL = "https://play.google.com/store"; // TODO
+const APP_STORE_URL = "https://apps.apple.com/app/id6450987816";
+// const PLAY_STORE_URL = "https://play.google.com/store"; // TODO
 
 export default function LandingPage() {
     return (
@@ -48,12 +48,12 @@ export default function LandingPage() {
                         >
                             Download for iOS
                         </a>
-                        <a
-                            href={PLAY_STORE_URL}
-                            className="rounded-xl border border-neutral-800 px-6 py-3 font-semibold text-white hover:border-neutral-600"
-                        >
-                            Get it on Android
-                        </a>
+                        {/*<a*/}
+                        {/*    href={PLAY_STORE_URL}*/}
+                        {/*    className="rounded-xl border border-neutral-800 px-6 py-3 font-semibold text-white hover:border-neutral-600"*/}
+                        {/*>*/}
+                        {/*    Get it on Android*/}
+                        {/*</a>*/}
                     </div>
 
                     <p className="mt-4 text-sm text-neutral-500">
