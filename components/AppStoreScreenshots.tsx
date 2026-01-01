@@ -3,6 +3,8 @@
 
 import { useMemo, useState } from "react";
 import ScreenshotCarousel from "./ScreenshotCarousel";
+import { PHONE_SCREENSHOTS } from "@/components/appstore_screenshots";
+
 
 type Shot = { src: string; alt: string; label?: string };
 
@@ -38,7 +40,7 @@ export default function AppStoreScreenshots() {
     return (
         <section className="w-full overflow-hidden">
             <div className="mt-5">
-                <ScreenshotCarousel screenshots={current.shots} />
+                <ScreenshotCarousel screenshots={PHONE_SCREENSHOTS} />
             </div>
         </section>
     );
