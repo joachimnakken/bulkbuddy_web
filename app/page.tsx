@@ -4,7 +4,7 @@ import Image from "next/image";
 import AppStoreScreenshots from "@/components/AppStoreScreenshots";
 
 const APP_STORE_URL = "https://apps.apple.com/app/id6450987816";
-// const PLAY_STORE_URL = "https://play.google.com/store"; // TODO
+const PLAY_STORE_URL = "https://play.google.com/store"; 
 
 export default function LandingPage() {
     return (
