@@ -53,12 +53,12 @@ export default function LandingPage() {
                         >
                             Download for iOS
                         </a>
-                        {/*<a*/}
-                        {/*    href={PLAY_STORE_URL}*/}
-                        {/*    className="rounded-xl border border-neutral-800 px-6 py-3 font-semibold text-white hover:border-neutral-600"*/}
-                        {/*>*/}
-                        {/*    Get it on Android*/}
-                        {/*</a>*/}
+                        <a
+                            href={PLAY_STORE_URL}
+                            className="rounded-xl border border-neutral-800 px-6 py-3 font-semibold text-white hover:border-neutral-600"
+                        >
+                            Get it on Android
+                        </a>
                     </div>
 
                     <p className="mt-4 text-sm text-neutral-500">
@@ -125,10 +125,7 @@ export default function LandingPage() {
                     Frequently asked questions
                 </h2>
                 <div className="mt-8 space-y-6">
-                    <FAQ
-                        question="Is BulkBuddy available on Android?"
-                        answer="Not yet, but it's coming first week of 2026"
-                    />
+
                     <FAQ
                         question="Is BulkBuddy free?"
                         answer="Yes. BulkBuddy has no subscriptions, ads, or hidden upsells."
